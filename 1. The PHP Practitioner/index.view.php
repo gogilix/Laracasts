@@ -47,16 +47,16 @@
 
 		</ul>
 
+
 		<ul>
 
-		<li>
-			<strong>Name: </strong> <?= task['title']
-		</li>
+		<?php foreach ($task as $heading => $value) : ?>
 
+			<li><?= ucwords($heading) ?> : <?= $value ?></li>
 
+		<?php endforeach; ?>
 
 		</ul>
-
 
 	</body>
 
