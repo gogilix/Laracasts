@@ -4,7 +4,7 @@
 
 	<meta charset = "UTF-8">
 
-	<title>Document </title>
+	<title>Laracast - The PHP Practicioner </title>
 
 	<style>
 
@@ -46,6 +46,17 @@
 		<?php endforeach; ?>
 
 		</ul>
+
+		<ul>
+
+		<li>
+			<strong>Name: </strong> <?= task['title']
+		</li>
+
+
+
+		</ul>
+
 
 	</body>
 

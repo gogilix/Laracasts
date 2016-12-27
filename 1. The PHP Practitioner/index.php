@@ -33,4 +33,16 @@ $person['name'] = 'Jeffrey';
 
 unset($person['age']);
 
+
+// Array of tasks
+
+$task = [
+
+	'title' => 'Finish Homework',
+	'due' => 'today',
+	'assigned_to' => 'Jeffrey',
+	'completed' => false
+
+];
+
 require 'index.view.php';
