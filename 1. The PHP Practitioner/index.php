@@ -1,58 +1,12 @@
 <?php
 
 require 'functions.php';
+require 'Task.php';
 
-// ToDo Application
+$pdo = connectToDb();
 
-// ToDo, Comment, User, Task, ... 
+$tasks = fetchAllTasks($pdo);
 
-
-class Task {
-
-	protected $description;
-	protected $completed = false;
-
-	public function __construct($description) {
-
-		// Automatically triggered on instantiation
-		$this->description = $description;
-	}
-
-
-
-	public function isComplete() {
-		return $this->completed;
-	}
-
-	public function complete() {
-		$this->completed = true;
-	}
-
-	public function description() {
-		return $this->description;
-	}
-
-}
-
-/*
-dd($tasks);
-
-$task = new Task('Go to the store');
-$task->complete();
-var_dump($task->isComplete());
-dd($task);
-*/
-
-$tasks = [
-	
-	new Task('Go to the store'),
-
-	new Task('Finish my screencast'),
-
-	new Task('Clean my room')
-];
-
-$tasks[0]->complete();
-
+//dd($results[0]->description);
 
 require 'index.view.php';
