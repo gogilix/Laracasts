@@ -1,5 +1,7 @@
 <?php
 
+require 'functions.php';
+
 $names = [
 	'Milan',
 	'Goran',
@@ -44,5 +46,12 @@ $task = [
 	'completed' => true
 
 ];
+
+
+// Functions
+
+$animals = ['dog', 'cat'];
+
+dd($animals);
 
 require 'index.view.php';
