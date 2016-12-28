@@ -1,8 +1,14 @@
 <?php
 
-require 'bootstrap.php';
-require 'Task.php';
+$database = require 'core/bootstrap.php';
 
-$tasks = $query->selectAll('todos', 'Task');
+$router = new Router;
 
-require 'index.view.php';
+require 'routes.php';
+
+var_dump($_SERVER);
+
+$uri = trim($_SERVER['REQUEST_URI'], '/php-learning/');
+
+require $router->direct($uri);
+
