@@ -58,6 +58,73 @@
 
 		</ul>
 
+		<!-- Ternary operator -->
+
+		<ul>
+
+			<li>
+
+				<strong>Name: </strong> <?= $task['title']; ?>
+
+			</li>
+
+			<li>
+
+				<strong>Due Date: </strong> <?= $task['due']; ?>
+
+			</li>
+
+			<li>
+
+				<strong>Person Responsible: </strong> <?= $task['assigned_to']; ?>
+
+			</li>
+
+			<li>
+
+				<strong>Status: </strong> <?= $task['completed'] ? 'Complete' : 'Incomplete'; ?>
+
+			</li>
+
+
+			<!-- Conditionals -->
+
+			<li>
+
+				<strong>Status: </strong>
+
+				<?php
+
+				if ($task['completed']) {
+
+					echo '&#9989;';
+
+				} else {
+
+					echo 'Incompleted!';
+
+				}
+
+				?>
+
+			</li>
+
+			<!-- Conditional 2 -->
+
+			<li>
+
+				<strong>Status: </strong>
+
+				<?php if ($task['completed']) : ?>
+
+					<span class="icon">Great, it's completed &#9989;</span>
+
+				<?php endif; ?>
+
+			</li>
+
+		</ul>
+
 	</body>
 
 </html>
