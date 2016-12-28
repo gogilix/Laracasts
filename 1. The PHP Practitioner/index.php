@@ -2,56 +2,57 @@
 
 require 'functions.php';
 
-$names = [
-	'Milan',
-	'Goran',
-	'Jovana'
+// ToDo Application
+
+// ToDo, Comment, User, Task, ... 
+
+
+class Task {
+
+	protected $description;
+	protected $completed = false;
+
+	public function __construct($description) {
+
+		// Automatically triggered on instantiation
+		$this->description = $description;
+	}
+
+
+
+	public function isComplete() {
+		return $this->completed;
+	}
+
+	public function complete() {
+		$this->completed = true;
+	}
+
+	public function description() {
+		return $this->description;
+	}
+
+}
+
+/*
+dd($tasks);
+
+$task = new Task('Go to the store');
+$task->complete();
+var_dump($task->isComplete());
+dd($task);
+*/
+
+$tasks = [
+	
+	new Task('Go to the store'),
+
+	new Task('Finish my screencast'),
+
+	new Task('Clean my room')
 ];
 
-$greeting = 'Hello, World';
+$tasks[0]->complete();
 
-// Associative Array
-// It consists of any number of key - value pairs
-
-$person = [
-
-	'age' => 31,
-	'hair' => 'black',
-	'career' => 'web developer'
-
-];
-
-// add item to associative array
-
-$person['name'] = 'Jeffrey';
-
-// print out variable value
-// var_dump($person);
-
-// stop further execution and print out something
-// die(var_dump(somevariable));
-
-// remove item from array
-
-unset($person['age']);
-
-
-// Array of tasks
-
-$task = [
-
-	'title' => 'Finish Homework',
-	'due' => 'today',
-	'assigned_to' => 'Jeffrey',
-	'completed' => true
-
-];
-
-
-// Functions
-
-$animals = ['dog', 'cat'];
-
-dd($animals);
 
 require 'index.view.php';

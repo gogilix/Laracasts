@@ -19,112 +19,28 @@
 
 	<body>
 
-		<header>
+	<ul>
 
-			<h1>
-			<?= $greeting; ?>
-			</h1>
+		<?php foreach ($tasks as $task) : ?>
 
-		</header>
+			<?php if ($task ->isComplete()) : ?>
 
-		<ul>
+				<strike>
 
-		<?php foreach ($names as $name) : ?>
+			<?php endif; ?>
 
-			<li><?= $name ?></li>
+			<li><?= $task->description(); ?></li>
 
-		<?php endforeach; ?>
+			<?php if ($task ->isComplete()) : ?>
 
-		</ul>
+				</strike>
 
-		<ul>
-
-		<?php foreach ($person as $feature => $value) : ?>
-
-			<li><?= $feature ?> is <?= $value ?></li>
+			<?php endif; ?>
 
 		<?php endforeach; ?>
 
-		</ul>
-
-
-		<ul>
-
-		<?php foreach ($task as $heading => $value) : ?>
-
-			<li><?= ucwords($heading) ?> : <?= $value ?></li>
-
-		<?php endforeach; ?>
-
-		</ul>
-
-		<!-- Ternary operator -->
-
-		<ul>
-
-			<li>
-
-				<strong>Name: </strong> <?= $task['title']; ?>
-
-			</li>
-
-			<li>
-
-				<strong>Due Date: </strong> <?= $task['due']; ?>
-
-			</li>
-
-			<li>
-
-				<strong>Person Responsible: </strong> <?= $task['assigned_to']; ?>
-
-			</li>
-
-			<li>
-
-				<strong>Status: </strong> <?= $task['completed'] ? 'Complete' : 'Incomplete'; ?>
-
-			</li>
-
-
-			<!-- Conditionals -->
-
-			<li>
-
-				<strong>Status: </strong>
-
-				<?php
-
-				if ($task['completed']) {
-
-					echo '&#9989;';
-
-				} else {
-
-					echo 'Incompleted!';
-
-				}
-
-				?>
-
-			</li>
-
-			<!-- Conditional 2 -->
-
-			<li>
-
-				<strong>Status: </strong>
-
-				<?php if ($task['completed']) : ?>
-
-					<span class="icon">Great, it's completed &#9989;</span>
-
-				<?php endif; ?>
-
-			</li>
-
-		</ul>
-
+	</ul>
+		
 	</body>
 
 </html>
